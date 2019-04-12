@@ -1,7 +1,8 @@
 HELP.md
 /target/
 !.mvn/wrapper/maven-wrapper.jar
-
+.mvn
+.vscode
 HELP.md
 project-manager.iml
 mvnw
