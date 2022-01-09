@@ -3,3 +3,7 @@ services:
   mongo:
     image: mongo
     command: --smallfiles
+    volumes:
+      - /data/mongodb/db:/data/db
+    ports:
+      - "27017:27017"
