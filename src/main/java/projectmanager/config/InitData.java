@@ -26,9 +26,9 @@ public class InitData implements CommandLineRunner {
 
         taskRepository.deleteAll().subscribe(System.out::println);
 
-        repository.deleteAll().subscribe(System.out::println);
-//                .thenMany(Flux.just("project 1", "project 2", "project 3")
-//                        .map(n -> new Project(n, UUID.randomUUID().toString())))
-//                .flatMap(repository::save).subscribe(System.out::println);
+        repository.deleteAll()
+               .thenMany(Flux.just("project 1", "project 2", "project 3")
+                       .map(n -> new Project(n, UUID.randomUUID().toString())))
+               .flatMap(repository::save).subscribe(System.out::println);
     }
 }

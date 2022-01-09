@@ -49,10 +49,6 @@ public class TaskController {
     public Mono<Void> deleteTask(@PathVariable("id") String id) {
         Mono<Void> delete = repository.deleteById(id);
 
-        return delete.doAfterSuccessOrError((e, t) -> {
-            if (t != null) {
-                t.printStackTrace();
-            }
-        });
+        return delete;
     }
 }
